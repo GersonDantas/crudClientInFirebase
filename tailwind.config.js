@@ -15,11 +15,13 @@ module.exports = {
       /^h-/,
       /^m-/,
       /^p-/,
+      /^bg-/,
       /^text-/,
       /^justify-/,
       /^border-/,
       /^rounded-/,
       /^hover:/,
+      /^focus:/,
     ]
   },
   darkMode: false, // or 'media' or 'class'
