@@ -7,15 +7,7 @@ module.exports = {
     //includes all the classes I want 
     //to be present in the final version
     safelist: [
-      /^bg-/,
-      /^to-/,
-      /^from-/,
-      /^flex-/,
-      /^item-/,
-      /^h-/,
-      /^m-/,
-      /^p-/,
-      /^text-/,
+      /^-/,
     ]
   },
   darkMode: false, // or 'media' or 'class'
