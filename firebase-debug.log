@@ -1,0 +1,58 @@
+[debug] [2021-08-26T20:18:30.448Z] ----------------------------------------------------------------------
+[debug] [2021-08-26T20:18:30.451Z] Command:       /usr/local/bin/firebase /home/gordim/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy --only functions --debug
+[debug] [2021-08-26T20:18:30.451Z] CLI Version:   9.16.0
+[debug] [2021-08-26T20:18:30.451Z] Platform:      linux
+[debug] [2021-08-26T20:18:30.451Z] Node Version:  v12.18.1
+[debug] [2021-08-26T20:18:30.451Z] Time:          Thu Aug 26 2021 17:18:30 GMT-0300 (GMT-03:00)
+[debug] [2021-08-26T20:18:30.452Z] ----------------------------------------------------------------------
+[debug] 
+[error] 
+[error] Error: Cannot understand what targets to deploy/serve. No targets in firebase.json match '--only functions'.
+[debug] [2021-08-26T20:19:07.110Z] ----------------------------------------------------------------------
+[debug] [2021-08-26T20:19:07.112Z] Command:       /usr/local/bin/firebase /home/gordim/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy --debug
+[debug] [2021-08-26T20:19:07.112Z] CLI Version:   9.16.0
+[debug] [2021-08-26T20:19:07.112Z] Platform:      linux
+[debug] [2021-08-26T20:19:07.112Z] Node Version:  v12.18.1
+[debug] [2021-08-26T20:19:07.113Z] Time:          Thu Aug 26 2021 17:19:07 GMT-0300 (GMT-03:00)
+[debug] [2021-08-26T20:19:07.113Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-08-26T20:19:07.176Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-08-26T20:19:07.177Z] > authorizing via signed-in user (gordimgerson@gmail.com)
+[debug] [2021-08-26T20:19:07.177Z] [iam] checking project next-crud-cffb5 for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]
+[debug] [2021-08-26T20:19:07.180Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/next-crud-cffb5:testIamPermissions  
+ {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2021-08-26T20:19:08.210Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 26 Aug 2021 20:19:08 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=781","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'next-crud-cffb5'...
+[info] 
+[info] i  deploying firestore 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2021-08-26T20:19:08.218Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/next-crud-cffb5:test  
+ {"source":{"files":[{"name":"firestore.rules","content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write: if\n          request.time < timestamp.date(2021, 9, 23);\n    }\n  }\n}"}]}}
+[debug] [2021-08-26T20:19:09.318Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 26 Aug 2021 20:19:09 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] ✔  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2021-08-26T20:19:09.323Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/next-crud-cffb5/releases?pageSize=10&pageToken=  
+ 
+[debug] [2021-08-26T20:19:09.324Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/next-crud-cffb5/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2021-08-26T20:19:09.832Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 26 Aug 2021 20:19:09 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-26T20:19:09.833Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/next-crud-cffb5/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2021-08-26T20:19:10.428Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 26 Aug 2021 20:19:10 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-26T20:19:10.431Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/next-crud-cffb5/rulesets/0e2bf52c-1437-4aec-a5a5-390a13a3a0cd  
+ 
+[debug] [2021-08-26T20:19:10.526Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 26 Aug 2021 20:19:10 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] ✔  firestore: deployed indexes in firestore.indexes.json successfully 
+[debug] [2021-08-26T20:19:11.553Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 26 Aug 2021 20:19:11 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[debug] [2021-08-26T20:19:11.556Z] [rules] releasing cloud.firestore with ruleset projects/next-crud-cffb5/rulesets/0e2bf52c-1437-4aec-a5a5-390a13a3a0cd
+[debug] [2021-08-26T20:19:11.557Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/next-crud-cffb5/releases/cloud.firestore  
+ {"release":{"name":"projects/next-crud-cffb5/releases/cloud.firestore","rulesetName":"projects/next-crud-cffb5/rulesets/0e2bf52c-1437-4aec-a5a5-390a13a3a0cd"}}
+[debug] [2021-08-26T20:19:12.743Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 26 Aug 2021 20:19:12 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-26T20:19:12.743Z] [rules] updated release projects/next-crud-cffb5/releases/cloud.firestore
+[info] ✔  firestore: released rules firestore.rules to cloud.firestore 
+[info] 
+[info] ✔  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/next-crud-cffb5/overview
