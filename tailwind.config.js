@@ -1,17 +1,23 @@
 module.exports = {
-  purge: [
-    // content: [
+  purge: {
+    content: [
       './pages/**/*.{js,ts,jsx,tsx}',
       './components/**/*.{js,ts,jsx,tsx}'
-    // ],
-    // //includes all the classes I want 
-    // //to be present in the final version
-    // safelist: [
-    //   /^bg-/,
-    //   /^to-/,
-    //   /^from-/,
-    // ]
-  ],
+    ],
+    //includes all the classes I want 
+    //to be present in the final version
+    safelist: [
+      /^bg-/,
+      /^to-/,
+      /^from-/,
+      /^flex-/,
+      /^item-/,
+      /^h-/,
+      /^m-/,
+      /^p-/,
+      /^text-/,
+    ]
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
